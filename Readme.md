@@ -1,7 +1,7 @@
 # ZapCode Figma-VSCode Bridge
 
 <!-- Optional: Add a logo or banner here -->
-<p align="center"><img src="./assets/Zapcode.png" alt="ZapCode Logo" width="200"></p>
+<p align="center"><img src="./assets/Zapcode.png" alt="ZapCode Logo" width="400"></p>
 
 Connect your Figma designs directly to your AI coding assistant in VS Code! This extension acts as a bridge, allowing AI tools that support the **Model Context Protocol (MCP)** to access real-time context from your selected Figma frames.
 
