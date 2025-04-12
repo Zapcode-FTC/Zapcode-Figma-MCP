@@ -29,7 +29,6 @@ The ZapCode Figma-VSCode Bridge solves this by creating a local connection betwe
 
 ## Requirements
 
-- **Figma:** Figma Desktop App is required.
 - **VS Code:** Version `1.99.0` or higher.
 - **ZapCode Figma Plugin:** You **must** install the companion ZapCode Figma Plugin. [[Zapcode - Figma Plugin](https://www.figma.com/community/plugin/1454956820198178710/zapcode)]
 - **MCP-Compatible AI Assistant:** A VS Code extension that can act as an MCP Client over HTTP/SSE. Examples include:
