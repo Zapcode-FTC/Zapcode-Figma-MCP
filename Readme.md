@@ -1,4 +1,4 @@
-# ZapCode Figma-VSCode Bridge
+# ZapCode Extension
 
 <!-- Optional: Add a logo or banner here -->
 <p align="center"><img src="./assets/Zapcode.png" alt="ZapCode Logo" width="400"></p>
@@ -11,7 +11,7 @@ Modern AI coding assistants (like Cline, Cursor, etc.) running in VS Code are po
 
 ## The Solution
 
-The ZapCode Figma-VSCode Bridge solves this by creating a local connection between the **ZapCode Figma Plugin** (required companion) and your VS Code environment.
+The ZapCode Extension solves this by creating a local connection between the **ZapCode Figma Plugin** (required companion) and your VS Code environment.
 
 1.  You select a design element in Figma.
 2.  The companion Figma Plugin prepares the context (structure, styles, assets).
@@ -24,8 +24,8 @@ The ZapCode Figma-VSCode Bridge solves this by creating a local connection betwe
 - **Real-time Connection:** Establishes a direct link between the ZapCode Figma Plugin and VS Code.
 - **MCP Server:** Hosts a local SSE MCP server (`http://localhost:3001/zapcode-mcp-sse`) discoverable by compatible AI clients.
 - **Figma Context Tool:** Provides the `get_figma_context` MCP tool, enabling AI assistants to request data about the currently selected Figma frame(s).
-- **Status Bar Control:** Easily activate and deactivate the bridge server directly from the VS Code status bar.
-- **Secure & Local:** All communication happens locally on your machine; no design data is sent to external ZapCode servers for the MCP bridge functionality.
+- **Status Bar Control:** Easily activate and deactivate the extension directly from the VS Code status bar.
+- **Secure & Local:** All communication happens locally on your machine; no design data is sent to external ZapCode servers for the MCP functionality.
 
 ## Requirements
 
@@ -38,7 +38,7 @@ The ZapCode Figma-VSCode Bridge solves this by creating a local connection betwe
 
 ## Setup Guide
 
-Follow these steps to get the bridge working:
+Follow these steps to get the extension working:
 
 **Step 1: Install ZapCode Figma Plugin**
 
@@ -57,10 +57,10 @@ You need to tell your AI assistant where to find the ZapCode MCP server.
 1.  Open your AI Assistant's MCP Server settings (Refer to its documentation). For **Cline**: Go to `Settings (UI)` > `MCP Servers` or edit `~/.continue/config.json`.
 2.  Add a new "Remote Server" (even though it's local).
 3.  Configure it with the following details:
-    - **Name:** `ZapCode Figma Bridge` (or similar)
+    - **Name:** `ZapCode` (or similar)
     - **URL:** `http://localhost:3001/zapcode-mcp-sse`
       _(Ensure the port `3001` and path `/zapcode-mcp-sse` match the extension's defaults. If you encounter port conflicts, this might need adjustment in the future, but stick to the default for now.)_
-4.  Save the settings and ensure Cline shows the server as connected _after_ you start the ZapCode bridge in VS Code (Step 5).
+4.  Save the settings and ensure Cline shows the server as connected _after_ you start the ZapCode in VS Code (Step 5).
 
     _Example Cline `config.json` entry:_
 
@@ -68,7 +68,7 @@ You need to tell your AI assistant where to find the ZapCode MCP server.
     {
       "mcpSources": [
         {
-          "title": "ZapCode Figma Bridge",
+          "title": "ZapCode",
           "url": "http://localhost:3001/zapcode-mcp-sse"
         }
       ]
@@ -84,7 +84,7 @@ You need to tell your AI assistant where to find the ZapCode MCP server.
 
 ## Usage
 
-1.  **Start the Bridge:** Open VS Code. Click the "Start ZapCode" item in the status bar (bottom left/right). The status bar icon should change to indicate it's active.
+1.  **Start the Extension:** Open VS Code. Click the "Start ZapCode" item in the status bar (bottom left/right). The status bar icon should change to indicate it's active.
 2.  **Open Figma Plugin:** Go to your Figma design file and run the ZapCode Figma Plugin.
 3.  **Enable MCP Mode:** Inside the ZapCode Figma Plugin UI, find the "MCP Mode" toggle switch and turn it **ON**.
 4.  **Confirm Connection:**
@@ -92,6 +92,6 @@ You need to tell your AI assistant where to find the ZapCode MCP server.
 5.  **Use Your AI Assistant:** Select a frame or component in Figma. Go back to VS Code and instruct your AI Assistant (e.g., Cline) to perform a task based on the design. For example:
     - _"Generate a React component based on the current Figma selection."_
     - _"Create HTML and CSS for the selected Figma frame."_
-6.  **Automatic Context Fetching:** The AI Assistant, configured with the ZapCode MCP server, should automatically detect the need for Figma context and call the `get_figma_context` tool provided by this bridge extension behind the scenes.
+6.  **Automatic Context Fetching:** The AI Assistant, configured with the ZapCode MCP server, should automatically detect the need for Figma context and call the `get_figma_context` tool provided by this extension behind the scenes.
 7.  **Code Generation:** The AI assistant will receive the context (HTML structure, CSS styles, image data, assets, prompt guidance) and use it to generate more accurate code.
-8.  **Stop the Bridge:** When finished, click the "ZapCode" status bar item in VS Code and select "Stop ZapCode". This closes the local servers. Remember to also toggle MCP Mode OFF in the Figma plugin if you are switching back to using its other features.
+8.  **Stop the Extension:** When finished, click the "ZapCode" status bar item in VS Code and select "Stop ZapCode". This closes the local servers. Remember to also toggle MCP Mode OFF in the Figma plugin if you are switching back to using its other features.
