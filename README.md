@@ -1,4 +1,4 @@
-# ZapCode Extension
+# ZapCode MCP Server
 
 <!-- Optional: Add a logo or banner here -->
 <p align="center"><img src="./assets/Zapcode.png" alt="ZapCode Logo" width="400"></p>
